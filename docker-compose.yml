@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_container
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - ./databaseV2:/var/lib/mysql
+  shadow-mysql:
+    image: mysql:8.0
+    container_name: shadow_mysql
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./databaseV3:/var/lib/mysql

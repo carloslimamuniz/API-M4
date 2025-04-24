@@ -1,0 +1,52 @@
+### Criar usuário
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "João da Silva",
+  "email": "joao@example.com",
+  "password": "senha123"
+}
+
+### Listar todos os usuários
+GET http://localhost:3000/users
+
+### Atualizar usuário (substitua o ID pelo correto)
+PUT http://localhost:3000/users/ID_DO_USUARIO_AQUI
+Content-Type: application/json
+
+{
+  "name": "João Atualizado",
+  "email": "joao.atualizado@example.com"
+}
+
+### Deletar usuário (substitua o ID pelo correto)
+DELETE http://localhost:3000/users/ID_DO_USUARIO_AQUI
+
+### Login
+POST http://localhost:3000/users/auth/login
+Content-Type: application/json
+
+{
+  "email": "joao@example.com",
+  "password": "senha123"
+}
+
+
+# -----------------------------------
+### Criar post para adoção
+POST http://localhost:3000/adoption
+Content-Type: application/json
+
+{
+  "title": "Filhote para adoção",
+  "description": "Cachorrinho muito dócil e saudável!",
+  "imageUrl": "https://exemplo.com/imagem.jpg",
+  "userId": "ID_DO_USUARIO_AQUI"
+}
+
+### Listar posts
+GET http://localhost:3000/adoption
+
+### Listar posts relacionado a um user
+GET http://localhost:3000/adoption/ID_DO_USUARIO_AQUI
